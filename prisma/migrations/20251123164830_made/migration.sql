@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "UrlDB" ALTER COLUMN "longurl" DROP NOT NULL;
