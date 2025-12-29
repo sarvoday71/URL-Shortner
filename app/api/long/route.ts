@@ -19,6 +19,7 @@ export async function POST(request: NextRequest) {
         console.log(shortUrl)
 
         if (shortUrl) {
+            console.log("URL already exists");
             return NextResponse.json(shortUrl);
         }
 
@@ -32,13 +33,13 @@ export async function POST(request: NextRequest) {
         const id = shortUrl.id;
         const hashValue = toBase64(id);
 
-        const shortUrltoPush = "http://localhost:3000/shorturl/" + hashValue;
+        const shortUrltoPush = hashValue;
         shortUrl = await prisma.urlDB.update({
             where: {
                 longurl: longUrl,
             },
             data: {
-                shroturl: shortUrltoPush,
+                shorturl: shortUrltoPush,
             }
         })
 
