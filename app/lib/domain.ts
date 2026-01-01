@@ -1,1 +1,1 @@
-export const domain = "http://localhost:3000/shorturl/"
+export const domain = "https://url-shortner-one-coral.vercel.app/shorturl/"
