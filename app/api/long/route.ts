@@ -44,7 +44,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(shortUrl);
     } catch (e) {
         console.log(e);
-        return NextResponse.json({ message: "Error while creating shorturl" }, { status: 404 });
+        return NextResponse.json({ message: "Error while creating shorturl" }, { status: 500 });
     }
 }
 
