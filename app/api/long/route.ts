@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: "longUrl missing" }, { status: 400 });
         }
         console.log(longUrl);
-        let shortUrl = await prisma.urlDB.findFirst({
+        let shortUrl = await prisma.urlDB.findUnique({
             where: {
                 longurl: longUrl
             }
